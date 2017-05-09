@@ -16,7 +16,6 @@ public class NestedIterator implements Iterator<Integer> {
         for (NestedInteger nestedInteger : nestedList){
             if(nestedInteger.isInteger()){
                 list.add(nestedInteger.getInteger());
-                System.out.println(nestedInteger.getInteger());
             }else{
                 init(nestedInteger.getList());
             }
@@ -25,7 +24,7 @@ public class NestedIterator implements Iterator<Integer> {
 
     @Override
     public Integer next() {
-        return list.get(index);
+        return list.get(index++);
     }
 
     @Override
