@@ -8,17 +8,16 @@ public class MaxConsecutiveOnes {
         System.out.println(maxConsecutiveOnes.findMaxConsecutiveOnes(nums));
     }
     public int findMaxConsecutiveOnes(int[] nums) {
-        int len = nums.length;
         int ans = 0, count = 0;
-        for(int i=0;i<len;){
-            while(i<len&&nums[i++]==1){
+        for (Integer i: nums){
+            if(i==0){
+                if(count > ans)
+                    ans = count;
+                count = 0;
+            }
+            else
                 count++;
-            }
-            if(count>ans){
-                ans = count;
-            }
-            count = 0;
         }
-        return ans;
+        return Math.max(ans, count);
     }
 }
