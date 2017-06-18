@@ -8,24 +8,27 @@ public class NonNegativeIntegerswithoutConsecutiveOnes {
 
     public int findIntegers(int num) {
         System.out.println(Math.log(num));
-        int[] n = new int[(int) Math.floor(Math.log(num)/Math.log(2))];
-        for (int i = n.length-1; i >=0 ; i--) {
+        int[] n = new int[(int) Math.floor(Math.log(num) / Math.log(2))];
+        for (int i = n.length - 1; i >= 0; i--) {
             n[i] = num % 2;
             num /= 2;
         }
-        int ans = 1;
-        boolean flag = false;
-        for (int i = 1; i < n.length; i++) {
-            if((n[i] ^ n[i-1]) == 0){
-                if(n[i] == 1){
-                    n[i] = 0;
-                    flag = true;
-                }else if(flag){
-                    n[i] = 1;
-                }
+        int oneLess = 0, oneEqual = 0, zeroLess = 0, zeroEqual = 1;
+        for (int i : n) {
+            if (i == 0) {
+                int tmp = oneLess;
+                oneLess = zeroLess;
+                zeroLess = tmp + zeroLess;
+                zeroEqual = zeroEqual + oneEqual;
+                oneEqual = 0;
+            } else {
+                int tmp = zeroLess;
+                zeroLess = oneEqual + oneLess + zeroEqual + zeroLess;
+                oneLess = tmp;
+                oneEqual = zeroEqual;
+                zeroEqual = 0;
             }
-            ans = ans *2 +n[i];
         }
-        return ans;
+        return oneEqual + oneLess + zeroEqual + zeroLess;
     }
 }
