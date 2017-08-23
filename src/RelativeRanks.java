@@ -12,9 +12,9 @@ public class RelativeRanks {
             map.put(nums[i], i);
         Arrays.sort(nums);
         String[] ans = new String[nums.length];
-        int i, j = nums.length-1;
-        for (i = 0; i < nums.length-3; i++) {
-            ans[map.get(nums[i])] = nums.length-i+"";
+        int i, j = nums.length - 1;
+        for (i = 0; i < nums.length - 3; i++) {
+            ans[map.get(nums[i])] = nums.length - i + "";
         }
         if (j >= i)
             ans[map.get(nums[j--])] = "Gold Medal";

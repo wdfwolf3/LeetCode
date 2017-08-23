@@ -15,12 +15,12 @@ public class MinimumIndexSumofTwoLists {
         int indexSum = Integer.MAX_VALUE;
         List<String> list = new ArrayList<>();
         for (int i = 0; i < list2.length; i++) {
-            if(map.containsKey(list2[i])){
-                if(map.get(list2[i]) + i < indexSum){
-                    indexSum = map.get(list2[i])+i;
+            if (map.containsKey(list2[i])) {
+                if (map.get(list2[i]) + i < indexSum) {
+                    indexSum = map.get(list2[i]) + i;
                     list = new ArrayList<>();
                     list.add(list2[i]);
-                }else if (map.get(list2[i]) + i == indexSum)
+                } else if (map.get(list2[i]) + i == indexSum)
                     list.add(list2[i]);
             }
         }

@@ -8,9 +8,9 @@ public class MaximumAverageSubarrayI {
             ans += nums[i];
         double sum = ans;
         for (int i = k; i < nums.length; i++) {
-            sum = sum - nums[i-k] + nums[i];
+            sum = sum - nums[i - k] + nums[i];
             ans = Math.max(ans, sum);
         }
-        return ans/k;
+        return ans / k;
     }
 }

@@ -11,13 +11,13 @@ public class CountNumbersWithUniqueDigits {
     }
 
     public int countNumbersWithUniqueDigits(int n) {
-        if(n < 2)
+        if (n < 2)
             return (int) Math.pow(10, n);
-        if(n > 10)
+        if (n > 10)
             return 8877691;
         int p = 9, f = 10;
         for (int i = 2; i <= n; i++) {
-            p = p*(10-i+1);
+            p = p * (10 - i + 1);
             f += p;
         }
         return f;

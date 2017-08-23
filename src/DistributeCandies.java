@@ -6,14 +6,15 @@ import java.util.Set;
  */
 public class DistributeCandies {
     public static void main(String[] args) {
-        int[] nums = {1,1,2,2,3,3};
+        int[] nums = {1, 1, 2, 2, 3, 3};
         System.out.println(new DistributeCandies().distributeCandies(nums));
     }
+
     public int distributeCandies(int[] candies) {
         Set<Integer> set = new HashSet<>();
-        for (int i:candies){
+        for (int i : candies) {
             set.add(i);
         }
-        return Math.min(candies.length/2, set.size());
+        return Math.min(candies.length / 2, set.size());
     }
 }

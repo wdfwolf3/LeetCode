@@ -11,43 +11,41 @@ public class SolvetheEquation {
         int x = 0, s = 0, left = 0;
         for (int i = 0; i < strings[0].length(); i++) {
             char c = strings[0].charAt(i);
-            if (c == '+' || c == '-'){
-                if (i != left){
+            if (c == '+' || c == '-') {
+                if (i != left) {
                     s -= Integer.parseInt(strings[0].substring(left, i));
                     left = i;
                 }
-            }
-            else if (c == 'x'){
+            } else if (c == 'x') {
                 if (left == i - 1)
-                    x += (strings[0].charAt(left)=='+'?1:-1);
+                    x += (strings[0].charAt(left) == '+' ? 1 : -1);
                 else
                     x += Integer.parseInt(strings[0].substring(left, i));
                 left = i + 1;
             }
         }
-        if ('x' != strings[0].charAt(strings[0].length()-1))
+        if ('x' != strings[0].charAt(strings[0].length() - 1))
             s -= Integer.parseInt(strings[0].substring(left));
         left = 0;
         for (int i = 0; i < strings[1].length(); i++) {
             char c = strings[1].charAt(i);
-            if (c == '+' || c == '-'){
-                if (i != left){
+            if (c == '+' || c == '-') {
+                if (i != left) {
                     s += Integer.parseInt(strings[1].substring(left, i));
                     left = i;
                 }
-            }
-            else if (c == 'x'){
+            } else if (c == 'x') {
                 if (left == i - 1)
-                    x -= (strings[1].charAt(left)=='+'?1:-1);
+                    x -= (strings[1].charAt(left) == '+' ? 1 : -1);
                 else
                     x -= Integer.parseInt(strings[1].substring(left, i));
                 left = i + 1;
             }
         }
-        if ('x' != strings[1].charAt(strings[1].length()-1))
+        if ('x' != strings[1].charAt(strings[1].length() - 1))
             s += Integer.parseInt(strings[1].substring(left));
         if (x != 0)
-            return "x=" + s/x;
+            return "x=" + s / x;
         if (s == 0)
             return "Infinite solutions";
         return "No solution";

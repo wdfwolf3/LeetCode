@@ -13,9 +13,9 @@ public class BinaryTreePreorderTraversal {
         return ans;
     }
 
-    private void assist(TreeNode root, List<Integer> list){
-        if(root == null){
-            return ;
+    private void assist(TreeNode root, List<Integer> list) {
+        if (root == null) {
+            return;
         }
         list.add(root.val);
         assist(root.left, list);

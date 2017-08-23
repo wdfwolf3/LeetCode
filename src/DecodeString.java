@@ -14,18 +14,18 @@ public class DecodeString {
         Stack<String> stringStack = new Stack<>();
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
-            if(Character.isDigit(c)){
-                int j = i+1;
+            if (Character.isDigit(c)) {
+                int j = i + 1;
                 while (Character.isDigit(s.charAt(j)))
                     j++;
                 numbers.push(Integer.parseInt(s.substring(i, j)));
                 i = j - 1;
-            }else if (Character.isAlphabetic(c)){
+            } else if (Character.isAlphabetic(c)) {
                 current += c;
-            }else if(c == '['){
+            } else if (c == '[') {
                 stringStack.push(current);
                 current = "";
-            }else {
+            } else {
                 int count = numbers.pop();
                 StringBuilder tmp = new StringBuilder(current);
                 for (int j = 1; j < count; j++) {

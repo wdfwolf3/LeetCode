@@ -6,7 +6,7 @@ public class ReverseWordsinaStringIII {
         char[] chars = s.toCharArray();
         int start = 0, end = 0;
         for (end = 0; end < s.length(); end++) {
-            if(chars[end] == ' ') {
+            if (chars[end] == ' ') {
                 reverse(chars, start, end - 1);
                 start = end + 1;
             }
@@ -15,8 +15,8 @@ public class ReverseWordsinaStringIII {
         return new String(chars);
     }
 
-    public void reverse(char[] chars, int start, int end){
-        while (start < end){
+    public void reverse(char[] chars, int start, int end) {
+        while (start < end) {
             char tmp = chars[start];
             chars[start++] = chars[end];
             chars[end--] = tmp;

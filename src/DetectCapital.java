@@ -6,10 +6,10 @@ public class DetectCapital {
         if (word.length() <= 1)
             return true;
         boolean isCapital = Character.isUpperCase(word.charAt(1));
-        if(isCapital && !Character.isUpperCase(word.charAt(0)))
+        if (isCapital && !Character.isUpperCase(word.charAt(0)))
             return false;
         for (int i = 2; i < word.length(); i++) {
-            if(Character.isUpperCase(word.charAt(i)) != isCapital)
+            if (Character.isUpperCase(word.charAt(i)) != isCapital)
                 return false;
         }
         return true;

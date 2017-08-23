@@ -11,16 +11,16 @@ public class ExclusiveTimeofFunctions {
         Stack<Integer> stack = new Stack<>();
         for (int i = 0, index = 0; i < logs.size(); i++) {
             String[] strings = logs.get(i).split(":");
-            if ("start".equals(strings[1])){
+            if ("start".equals(strings[1])) {
                 int p = Integer.parseInt(strings[2]);
                 if (!stack.isEmpty())
-                    ans[stack.peek()] = ans[stack.peek()] + (p-index);
+                    ans[stack.peek()] = ans[stack.peek()] + (p - index);
                 stack.push(Integer.parseInt(strings[0]));
                 index = p;
-            }else {
+            } else {
                 int p = stack.pop();
                 int i1 = Integer.parseInt(strings[2]);
-                ans[p] = ans[p] + (i1 +1 -index);
+                ans[p] = ans[p] + (i1 + 1 - index);
                 index = i1 + 1;
             }
         }
