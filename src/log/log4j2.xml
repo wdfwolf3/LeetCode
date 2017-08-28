@@ -2,19 +2,19 @@
 <Configuration status="warn">
     <Appenders>
         <Console name="Console" target="SYSTEM_OUT">
-            <PatternLayout pattern="[%-5p] %d %c - %m%n" />
+            <PatternLayout pattern="[%-5p] %d %c - %m%n"/>
         </Console>
         <File name="File" fileName="my.log">
-        <PatternLayout pattern="%m%n" />
+            <PatternLayout pattern="%m%n"/>
         </File>
     </Appenders>
 
     <Loggers>
         <Logger name="Test" level="INFO">
-            <AppenderRef ref="File" />
+            <AppenderRef ref="File"/>
         </Logger>
         <Root level="INFO">
-            <AppenderRef ref="Console" />
+            <AppenderRef ref="Console"/>
         </Root>
     </Loggers>
 </Configuration>

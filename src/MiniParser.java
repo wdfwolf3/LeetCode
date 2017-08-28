@@ -7,33 +7,33 @@ import java.util.Stack;
  */
 public class MiniParser {
     public NestedInteger deserialize(String s) {
-        if(s==null||s.equals("")){
+        if (s == null || s.equals("")) {
             return new NestedInteger();
         }
-        if(s.charAt(0)!='['){
+        if (s.charAt(0) != '[') {
             return new NestedInteger(Integer.parseInt(s));
         }
         Stack<NestedInteger> stack = new Stack<>();
         NestedInteger ans = null;
         for (int left = 0, right = 0; right < s.length(); right++) {
             char c = s.charAt(right);
-            if (c == '['){
-                if(ans != null) {
+            if (c == '[') {
+                if (ans != null) {
                     stack.push(ans);
                 }
                 ans = new NestedInteger();
                 left = right + 1;
-            }else if (c == ','){
-                if(s.charAt(right-1) != ']'){
+            } else if (c == ',') {
+                if (s.charAt(right - 1) != ']') {
                     ans.add(new NestedInteger(Integer.parseInt(s.substring(left, right))));
                 }
                 left = right + 1;
-            }else if (c == ']'){
+            } else if (c == ']') {
                 String number = s.substring(left, right);
-                if(!number.isEmpty()){
+                if (!number.isEmpty()) {
                     ans.add(new NestedInteger(Integer.parseInt(s.substring(left, right))));
                 }
-                if(!stack.isEmpty()){
+                if (!stack.isEmpty()) {
                     stack.peek().add(ans);
                     ans = stack.pop();
                 }
@@ -48,12 +48,12 @@ class NestedInteger {
     private List<NestedInteger> list;
     private Integer integer;
 
-    public NestedInteger(List<NestedInteger> list){
+    public NestedInteger(List<NestedInteger> list) {
         this.list = list;
     }
 
     public void add(NestedInteger nestedInteger) {
-        if(this.list != null){
+        if (this.list != null) {
             this.list.add(nestedInteger);
         } else {
             this.list = new ArrayList();
@@ -65,7 +65,7 @@ class NestedInteger {
         this.integer = num;
     }
 
-    public NestedInteger(Integer integer){
+    public NestedInteger(Integer integer) {
         this.integer = integer;
     }
 
@@ -85,18 +85,17 @@ class NestedInteger {
         return list;
     }
 
-    public String printNi(NestedInteger thisNi, StringBuilder sb){
-        if(thisNi.isInteger()) {
+    public String printNi(NestedInteger thisNi, StringBuilder sb) {
+        if (thisNi.isInteger()) {
             sb.append(thisNi.integer);
             sb.append(",");
         }
         sb.append("[");
-        for(NestedInteger ni : thisNi.list){
-            if(ni.isInteger()) {
+        for (NestedInteger ni : thisNi.list) {
+            if (ni.isInteger()) {
                 sb.append(ni.integer);
                 sb.append(",");
-            }
-            else {
+            } else {
                 printNi(ni, sb);
             }
         }

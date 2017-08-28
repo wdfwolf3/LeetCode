@@ -6,9 +6,9 @@ import java.util.Arrays;
 public class MaximumProductofThreeNumbers {
     public int maximumProduct(int[] nums) {
         Arrays.sort(nums);
-        int last = nums.length-1;
-        if (nums[0]>=0 || nums[last]<=0)
-            return nums[last]*nums[last-1]*nums[last-2];
-        return Math.max(nums[last]*nums[last-1]*nums[last-2], nums[0]*nums[1]*nums[last]);
+        int last = nums.length - 1;
+        if (nums[0] >= 0 || nums[last] <= 0)
+            return nums[last] * nums[last - 1] * nums[last - 2];
+        return Math.max(nums[last] * nums[last - 1] * nums[last - 2], nums[0] * nums[1] * nums[last]);
     }
 }

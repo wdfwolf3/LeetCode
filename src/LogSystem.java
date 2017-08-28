@@ -29,15 +29,15 @@ public class LogSystem {
         List<Integer> list = new ArrayList<>();
         long start = getTimestamp(s, gra);
         long end = getTimestamp(e, gra);
-        for (Map.Entry<Integer, String> entry : map.entrySet()){
-            long l = getTimestamp(entry.getValue(),gra);
-            if (l>= start && l<= end)
+        for (Map.Entry<Integer, String> entry : map.entrySet()) {
+            long l = getTimestamp(entry.getValue(), gra);
+            if (l >= start && l <= end)
                 list.add(entry.getKey());
         }
         return list;
     }
 
-    private long getTimestamp(String s, String gra){
+    private long getTimestamp(String s, String gra) {
         SimpleDateFormat sdf = new SimpleDateFormat(format.get(gra));
         Long l = 0l;
         try {

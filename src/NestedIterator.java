@@ -12,11 +12,11 @@ public class NestedIterator implements Iterator<Integer> {
         init(nestedList);
     }
 
-    private void init(List<NestedInteger> nestedList){
-        for (NestedInteger nestedInteger : nestedList){
-            if(nestedInteger.isInteger()){
+    private void init(List<NestedInteger> nestedList) {
+        for (NestedInteger nestedInteger : nestedList) {
+            if (nestedInteger.isInteger()) {
                 list.add(nestedInteger.getInteger());
-            }else{
+            } else {
                 init(nestedInteger.getList());
             }
         }
@@ -29,7 +29,7 @@ public class NestedIterator implements Iterator<Integer> {
 
     @Override
     public boolean hasNext() {
-        return index!=list.size();
+        return index != list.size();
     }
 }
 

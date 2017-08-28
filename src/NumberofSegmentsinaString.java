@@ -4,12 +4,12 @@
 public class NumberofSegmentsinaString {
     public int countSegments(String s) {
         int ans = 0;
-        for (int i = 0; i < s.length();) {
-            if(s.charAt(i)!=' '){
-                while (i<s.length() && s.charAt(i)!=' ')
+        for (int i = 0; i < s.length(); ) {
+            if (s.charAt(i) != ' ') {
+                while (i < s.length() && s.charAt(i) != ' ')
                     i++;
                 ans++;
-            }else
+            } else
                 i++;
         }
         return ans;

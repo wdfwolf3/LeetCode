@@ -3,13 +3,13 @@
  */
 public class ConstructStringfromBinaryTree {
     public String tree2str(TreeNode t) {
-        if(t == null)
+        if (t == null)
             return "";
-        else if(t.right == null && t.left == null)
+        else if (t.right == null && t.left == null)
             return String.valueOf(t.val);
-        else if(t.right == null)
+        else if (t.right == null)
             return String.valueOf(t.val) + "(" + tree2str(t.left) + ")";
-        else if(t.left == null)
+        else if (t.left == null)
             return String.valueOf(t.val) + "()(" + tree2str(t.right) + ")";
         else
             return String.valueOf(t.val) + "(" + tree2str(t.left) + ")" + "(" + tree2str(t.right) + ")";

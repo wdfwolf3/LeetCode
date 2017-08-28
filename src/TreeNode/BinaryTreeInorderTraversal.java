@@ -9,19 +9,19 @@ import java.util.List;
 public class BinaryTreeInorderTraversal {
     public List<Integer> inorderTraversal(TreeNode root) {
         List<Integer> ans = new ArrayList<>();
-        if(root == null){
+        if (root == null) {
             return ans;
         }
         assist(root, ans);
         return ans;
     }
 
-    private void assist(TreeNode root, List<Integer> list){
-        if(root.left!=null){
+    private void assist(TreeNode root, List<Integer> list) {
+        if (root.left != null) {
             assist(root.left, list);
         }
         list.add(root.val);
-        if(root.right!=null){
+        if (root.right != null) {
             assist(root.right, list);
         }
     }

@@ -10,8 +10,8 @@ public class BinaryTreePostorderTraversal {
         LinkedList<Integer> result = new LinkedList<>();
         Stack<TreeNode> stack = new Stack<>();
         TreeNode p = root;
-        while(!stack.isEmpty() || p != null) {
-            if(p != null) {
+        while (!stack.isEmpty() || p != null) {
+            if (p != null) {
                 stack.push(p);
                 result.addFirst(p.val);  // Reverse the process of preorder
                 p = p.right;             // Reverse the process of preorder
@@ -28,8 +28,8 @@ public class BinaryTreePostorderTraversal {
         List<Integer> result = new ArrayList<>();
         Deque<TreeNode> stack = new ArrayDeque<>();
         TreeNode p = root;
-        while(!stack.isEmpty() || p != null) {
-            if(p != null) {
+        while (!stack.isEmpty() || p != null) {
+            if (p != null) {
                 stack.push(p);
                 result.add(p.val);  // Add before going to children
                 p = p.left;
@@ -45,8 +45,8 @@ public class BinaryTreePostorderTraversal {
         List<Integer> result = new ArrayList<>();
         Deque<TreeNode> stack = new ArrayDeque<>();
         TreeNode p = root;
-        while(!stack.isEmpty() || p != null) {
-            if(p != null) {
+        while (!stack.isEmpty() || p != null) {
+            if (p != null) {
                 stack.push(p);
                 p = p.left;
             } else {
