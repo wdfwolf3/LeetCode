@@ -4,7 +4,7 @@ public class FriendCircles {
         boolean[] sign = new boolean[M.length];
         for (int i = 0; i < sign.length; i++) {
             M[i][i] = 0;
-            if (!sign[i]){
+            if (!sign[i]) {
                 help(M, sign, i);
                 ans++;
             }

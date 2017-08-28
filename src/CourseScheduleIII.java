@@ -10,7 +10,7 @@ public class CourseScheduleIII {
         Arrays.sort(courses, new Comparator<int[]>() {
             @Override
             public int compare(int[] o1, int[] o2) {
-                return (o1[1]==o2[1]?0:(o1[1]<o2[1]?-1:1));
+                return (o1[1] == o2[1] ? 0 : (o1[1] < o2[1] ? -1 : 1));
             }
         });
         PriorityQueue<Integer> queue = new PriorityQueue<>(new Comparator<Integer>() {
@@ -20,8 +20,8 @@ public class CourseScheduleIII {
             }
         });
         int sum = 0;
-        for (int[] course : courses){
-            sum+=course[0];
+        for (int[] course : courses) {
+            sum += course[0];
             queue.offer(course[0]);
             if (sum > course[1])
                 sum -= queue.poll();
@@ -30,7 +30,7 @@ public class CourseScheduleIII {
     }
 
     public static void main(String[] args) {
-        int[][] ints = {{100,200},{200,1300},{1000,1250},{2000,3200}};
+        int[][] ints = {{100, 200}, {200, 1300}, {1000, 1250}, {2000, 3200}};
         System.out.println(scheduleCourse(ints));
     }
 }
