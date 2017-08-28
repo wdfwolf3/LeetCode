@@ -1,4 +1,5 @@
 import java.util.Stack;
+import TreeNode.TreeNode;
 
 public class BSTIterator {
 	private Stack<TreeNode> stack = new Stack<>();
@@ -34,12 +35,4 @@ public class BSTIterator {
 	}
 }
 
-class TreeNode {
-	int val;
-	TreeNode left;
-	TreeNode right;
 
-	TreeNode(int x) {
-		val = x;
-	}
-}
