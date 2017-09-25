@@ -9,7 +9,7 @@ public class KEmptySlots {
         for (int i = 0; i < flowers.length; i++) {
             int n = flowers[i];
             Integer h = set.higher(n), l = set.lower(n);
-            if ((h!= null && h - n - 1 == k) || (l!=null && l + k + 1 == n))
+            if ((h != null && h - n - 1 == k) || (l != null && l + k + 1 == n))
                 return i + 1;
             set.add(n);
         }
