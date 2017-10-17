@@ -29,7 +29,7 @@ public class _24Game {
                 for (int k = 0; k < 6; k++) {
                     double[] ans = help(before[j], after[k]);
                     for (int l = 0; l < 6; l++) {
-                        if (Math.abs(24 - ans[l])< c)
+                        if (Math.abs(24 - ans[l]) < c)
                             return true;
                     }
                 }
